@@ -5,8 +5,9 @@ import {
   ListItemText,
   ListItemSecondaryAction,
 } from "@mui/material";
-import CancelIcon from "@mui/icons-material/Cancel";
+
 import CheckIcon from "@mui/icons-material/Check";
+import ClearIcon from "@mui/icons-material/Clear";
 
 import useInput from "./hooks/useInput";
 
@@ -27,15 +28,16 @@ function TodoEdit(props) {
           value={edit}
           onChange={handleEdit}
           autoFocus
-          style={{ width: "85%" }}
+          //   style={{ width: "85%" }} : the below doesn't look bad, honestly, and makes the above todo thing easier
           variant="standard"
+          fullWidth
         />
       </ListItemText>
       <ListItemSecondaryAction>
-        <IconButton onClick={toggleEdit}>
-          <CancelIcon />
+        <IconButton onClick={toggleEdit} aria-label="cancel edit">
+          <ClearIcon />
         </IconButton>
-        <IconButton type="submit">
+        <IconButton type="submit" aria-label="confirm edit">
           <CheckIcon />
         </IconButton>
       </ListItemSecondaryAction>

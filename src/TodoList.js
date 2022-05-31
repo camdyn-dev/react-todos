@@ -7,7 +7,9 @@ function TodoList(props) {
     <Paper>
       <List>
         {todos.map((todo, i) => (
-          <>
+          <React.Fragment key={todo.task}>
+            {" "}
+            {/* react kept throwing errors with this not having a key */}
             <TodoItem
               {...todo}
               key={todo.id}
@@ -16,7 +18,7 @@ function TodoList(props) {
               toggleTodo={toggleTodo}
             />
             {i < todos.length - 1 && <Divider />}
-          </>
+          </React.Fragment>
         ))}
       </List>
     </Paper>
