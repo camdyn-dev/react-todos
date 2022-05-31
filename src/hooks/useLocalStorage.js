@@ -3,13 +3,18 @@ import { useState, useEffect } from "react";
 function useLocalStorage(key, initVal) {
   const [state, setState] = useState(() => {
     let val;
-    if (localStorage.getItem(key).length > 2) {
-      //if there's more than just the two quotation marks
-      val = JSON.parse(localStorage.getItem(key)); //grab it from localStorage
-    } else {
-      val = initVal; //otherwise, use the initial value
+    try {
+      if (localStorage.getItem(key).length > 2) {
+        //if there's more than just the two quotation marks
+        val = JSON.parse(localStorage.getItem(key)); //grab it from localStorage
+      } else {
+        val = initVal; //otherwise, use the initial value
+      }
+      return val;
+    } catch (e) {
+      val = initVal;
+      return val;
     }
-    return val;
   });
 
   useEffect(() => {
