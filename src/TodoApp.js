@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import useTodo from "./hooks/useTodo";
 import { AppBar, Typography, Paper, Toolbar, Grid } from "@mui/material";
 
 import TodoList from "./TodoList";
@@ -14,44 +15,11 @@ function TodoApp() {
           { id: 3, task: "return of the macc", completed: false },
         ];
 
-  const [todos, setTodos] = useState(initTodos);
+  const [todos, addTodo, editTodo, deleteTodo, toggleTodo] = useTodo(initTodos);
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
-
-  const addTodo = (newTodoText) => {
-    const newTodoId = todos.length ? todos[todos.length - 1].id + 1 : 1; //if there's already a task, use the last task id + 1, otherwise, use 1
-    setTodos([
-      ...todos,
-      {
-        id: newTodoId,
-        task: newTodoText,
-        completed: false,
-      },
-    ]);
-  };
-
-  const editTodo = (todoId, newTask) => {
-    const newTodos = todos.map((todo) =>
-      todo.id === todoId ? { ...todo, task: newTask } : todo
-    );
-    //if the inputted todo is the same, change the text, otherwise return original
-    setTodos(newTodos);
-  };
-
-  const deleteTodo = (todoId) => {
-    const newTodos = todos.filter((todo) => todo.id !== todoId);
-    setTodos(newTodos);
-  };
-
-  const toggleTodo = (todoId) => {
-    const newTodos = todos.map((todo) =>
-      todo.id === todoId ? { ...todo, completed: !todo.completed } : todo
-    );
-    //if the inputted todo is the same, flip the status of completed, otherwise, return original todo
-    setTodos(newTodos);
-  };
 
   return (
     <Paper
