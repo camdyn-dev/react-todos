@@ -1,6 +1,6 @@
 import React from "react";
 import TodoItem from "./TodoItem";
-import { Paper, List, ListItem, Divider } from "@mui/material";
+import { Paper, List, Divider } from "@mui/material";
 function TodoList(props) {
   const { todos, editTodo, deleteTodo, toggleTodo } = props;
   return (

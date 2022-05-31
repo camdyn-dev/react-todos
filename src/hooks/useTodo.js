@@ -1,7 +1,7 @@
-import { useState } from "react";
+import useLocalStorage from "./useLocalStorage";
 
 const useTodo = (initTodos) => {
-  const [todos, setTodos] = useState(initTodos);
+  const [todos, setTodos] = useLocalStorage("todos", initTodos); //I don't really like adding another layer of complexity with using this hook, but the google man made it look good so
 
   const addTodo = (newTodoText) => {
     const newTodoId = todos.length ? todos[todos.length - 1].id + 1 : 1; //if there's already a task, use the last task id + 1, otherwise, use 1
