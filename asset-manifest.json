@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/camdyn-dev/react-todos/static/css/main.e6c13ad2.css",
-    "main.js": "/camdyn-dev/react-todos/static/js/main.d70fd6c5.js",
-    "static/js/787.cd716a2f.chunk.js": "/camdyn-dev/react-todos/static/js/787.cd716a2f.chunk.js",
-    "index.html": "/camdyn-dev/react-todos/index.html",
-    "main.e6c13ad2.css.map": "/camdyn-dev/react-todos/static/css/main.e6c13ad2.css.map",
-    "main.d70fd6c5.js.map": "/camdyn-dev/react-todos/static/js/main.d70fd6c5.js.map",
-    "787.cd716a2f.chunk.js.map": "/camdyn-dev/react-todos/static/js/787.cd716a2f.chunk.js.map"
+    "main.css": "/camdyn-dev/react-todos/tree/gh-pages/static/css/main.e6c13ad2.css",
+    "main.js": "/camdyn-dev/react-todos/tree/gh-pages/static/js/main.f5e0f78f.js",
+    "static/js/787.cd716a2f.chunk.js": "/camdyn-dev/react-todos/tree/gh-pages/static/js/787.cd716a2f.chunk.js",
+    "index.html": "/camdyn-dev/react-todos/tree/gh-pages/index.html",
+    "main.e6c13ad2.css.map": "/camdyn-dev/react-todos/tree/gh-pages/static/css/main.e6c13ad2.css.map",
+    "main.f5e0f78f.js.map": "/camdyn-dev/react-todos/tree/gh-pages/static/js/main.f5e0f78f.js.map",
+    "787.cd716a2f.chunk.js.map": "/camdyn-dev/react-todos/tree/gh-pages/static/js/787.cd716a2f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.d70fd6c5.js"
+    "static/js/main.f5e0f78f.js"
   ]
 }
