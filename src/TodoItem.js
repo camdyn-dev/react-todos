@@ -3,7 +3,6 @@ import TodoEdit from "./TodoEdit";
 import {
   ListItem,
   ListItemText,
-  Divider,
   Checkbox,
   IconButton,
   ListItemSecondaryAction,
@@ -20,7 +19,7 @@ function TodoItem(props) {
   const [edit, toggleEdit] = useToggle(false);
   return (
     <>
-      <ListItem>
+      <ListItem style={{ height: "64px" }}>
         {!edit ? (
           <>
             <Checkbox
@@ -51,7 +50,6 @@ function TodoItem(props) {
           />
         )}
       </ListItem>
-      <Divider />
     </>
   );
 }

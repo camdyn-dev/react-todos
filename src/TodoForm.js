@@ -17,6 +17,7 @@ function TodoForm(props) {
           margin="normal"
           label="Add new todo"
           fullWidth
+          variant="standard"
         />
         {/* <Button type="submit">Submit</Button> */}
       </form>

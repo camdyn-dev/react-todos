@@ -6,14 +6,17 @@ function TodoList(props) {
   return (
     <Paper>
       <List>
-        {todos.map((todo) => (
-          <TodoItem
-            {...todo}
-            key={todo.id}
-            editTodo={editTodo}
-            deleteTodo={deleteTodo}
-            toggleTodo={toggleTodo}
-          />
+        {todos.map((todo, i) => (
+          <>
+            <TodoItem
+              {...todo}
+              key={todo.id}
+              editTodo={editTodo}
+              deleteTodo={deleteTodo}
+              toggleTodo={toggleTodo}
+            />
+            {i < todos.length - 1 && <Divider />}
+          </>
         ))}
       </List>
     </Paper>

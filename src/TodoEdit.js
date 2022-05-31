@@ -1,5 +1,12 @@
 import React from "react";
-import { TextField } from "@mui/material";
+import {
+  TextField,
+  IconButton,
+  ListItemText,
+  ListItemSecondaryAction,
+} from "@mui/material";
+import CancelIcon from "@mui/icons-material/Cancel";
+import CheckIcon from "@mui/icons-material/Check";
 
 import useInput from "./hooks/useInput";
 
@@ -13,9 +20,25 @@ function TodoEdit(props) {
           e.preventDefault(), editTodo(id, edit), resetEdit(), toggleEdit()
         );
       }}
-      style={{ width: "100%" }}
+      style={{ marginLeft: "1rem", width: "100%" }}
     >
-      <TextField margin="normal" value={edit} onChange={handleEdit} fullWidth />
+      <ListItemText>
+        <TextField
+          value={edit}
+          onChange={handleEdit}
+          autoFocus
+          style={{ width: "85%" }}
+          variant="standard"
+        />
+      </ListItemText>
+      <ListItemSecondaryAction>
+        <IconButton onClick={toggleEdit}>
+          <CancelIcon />
+        </IconButton>
+        <IconButton type="submit">
+          <CheckIcon />
+        </IconButton>
+      </ListItemSecondaryAction>
     </form>
   );
 }

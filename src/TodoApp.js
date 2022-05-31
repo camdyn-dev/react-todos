@@ -1,17 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AppBar, Typography, Paper, Toolbar, Grid } from "@mui/material";
 
 import TodoList from "./TodoList";
 import TodoForm from "./TodoForm";
 
 function TodoApp() {
-  const initTodos = [
-    { id: 1, task: "fart", completed: true },
-    { id: 2, task: "shit", completed: true },
-    { id: 3, task: "find love", completed: false },
-  ];
+  const initTodos =
+    localStorage.getItem("todos").length > 2 //localStorage stores as a string, so it counts the 2 quotation marks
+      ? JSON.parse(localStorage.getItem("todos"))
+      : [
+          { id: 1, task: "return the mac", completed: true },
+          { id: 2, task: "baybayy", completed: true },
+          { id: 3, task: "return of the macc", completed: false },
+        ];
 
   const [todos, setTodos] = useState(initTodos);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = (newTodoText) => {
     const newTodoId = todos.length ? todos[todos.length - 1].id + 1 : 1; //if there's already a task, use the last task id + 1, otherwise, use 1
