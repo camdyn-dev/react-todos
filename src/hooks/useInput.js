@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function useInput(initValue) {
+function useInput(initValue = "") {
   const [val, setVal] = useState(initValue);
 
   const handleChange = (e) => {

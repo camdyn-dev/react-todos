@@ -25,6 +25,14 @@ function TodoApp() {
     ]);
   };
 
+  const editTodo = (todoId, newTask) => {
+    const newTodos = todos.map((todo) =>
+      todo.id === todoId ? { ...todo, task: newTask } : todo
+    );
+    //if the inputted todo is the same, change the text, otherwise return original
+    setTodos(newTodos);
+  };
+
   const deleteTodo = (todoId) => {
     const newTodos = todos.filter((todo) => todo.id !== todoId);
     setTodos(newTodos);
@@ -58,6 +66,7 @@ function TodoApp() {
           <TodoForm addTodo={addTodo} />
           <TodoList
             todos={todos}
+            editTodo={editTodo}
             deleteTodo={deleteTodo}
             toggleTodo={toggleTodo}
           />
