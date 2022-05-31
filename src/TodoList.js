@@ -8,7 +8,6 @@ function TodoList(props) {
       <List>
         {todos.map((todo, i) => (
           <React.Fragment key={todo.task}>
-            {" "}
             {/* react kept throwing errors with this not having a key */}
             <TodoItem
               {...todo}
